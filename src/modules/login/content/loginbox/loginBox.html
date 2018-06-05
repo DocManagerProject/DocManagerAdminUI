@@ -1,0 +1,22 @@
+<div class="login-box">
+  <form (ngSubmit)="onSubmit()" #login="ngForm">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Login to ADMIN</h5>
+      </div>
+
+      <div class="card-body">
+        <input type="text" class="form-control" id="email" placeholder="E-mail" required
+               [(ngModel)] = "loginCredentials.email" name="email">
+        <input type="password" class="form-control" id="password" placeholder="Password" required
+               [(ngModel)] = "loginCredentials.password" name="password">
+        <div class="row">
+          <div class="col">
+            <div class="alert alert-danger" [ngClass]="{'transition':show}" [hidden]="isValid">{{errorMessage}}</div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+  </form>
+</div>
